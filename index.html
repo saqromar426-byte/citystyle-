@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+           <!DOCTYPE html>
 <html lang="ar" dir="rtl" id="html-root">
 
 <head>
@@ -41,6 +42,7 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             transition: background-color 0.3s ease, color 0.3s ease;
+            overflow-x: hidden;
         }
 
         /* تصميم الـ Navbar */
@@ -50,12 +52,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 50px;
+            padding: 15px 5%;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             position: sticky;
             top: 0;
             z-index: 1000;
             transition: background-color 0.3s ease;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .navbar .logo {
@@ -69,7 +73,9 @@
         .navbar .nav-links {
             list-style: none;
             display: flex;
-            gap: 25px;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .navbar .nav-links li a {
@@ -77,6 +83,7 @@
             text-decoration: none;
             font-size: 15px;
             transition: color 0.3s ease;
+            white-space: nowrap;
         }
 
         .navbar .nav-links li a:hover {
@@ -114,7 +121,7 @@
         .offers-banner {
             background-color: var(--nav-bg);
             color: #ffffff;
-            padding: 20px;
+            padding: 20px 15px;
             text-align: center;
             border-bottom: 2px solid var(--accent-color);
         }
@@ -142,7 +149,7 @@
 
         /* أقسام المنتجات العامة */
         .products-section {
-            padding: 40px 50px;
+            padding: 40px 5%;
             text-align: center;
         }
 
@@ -154,7 +161,7 @@
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 25px;
         }
 
@@ -259,10 +266,11 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            padding: 20px;
         }
 
         .image-modal img {
-            max-width: 85%;
+            max-width: 90%;
             max-height: 80vh;
             border-radius: 8px;
             box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
@@ -270,8 +278,8 @@
 
         .close-modal {
             position: absolute;
-            top: 25px;
-            left: 35px;
+            top: 20px;
+            left: 25px;
             color: #fff;
             font-size: 40px;
             font-weight: bold;
@@ -286,16 +294,17 @@
         /* 🛒 سلة التسوق */
         .cart-section {
             background-color: var(--card-bg);
-            padding: 50px;
+            padding: 50px 5%;
             border-top: 3px solid var(--accent-color);
             text-align: right;
         }
 
         .cart-container {
             max-width: 600px;
+            width: 100%;
             margin: 0 auto;
             background: var(--bg-color);
-            padding: 30px;
+            padding: 30px 20px;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
             border: 1px solid var(--border-color);
@@ -347,7 +356,7 @@
         /* 🌟 آراء العملاء */
         .reviews-section {
             background-color: var(--section-alt);
-            padding: 50px;
+            padding: 50px 5%;
             text-align: center;
         }
 
@@ -359,7 +368,7 @@
 
         .reviews-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 20px;
             margin-bottom: 40px;
         }
@@ -397,8 +406,9 @@
         .add-review-box {
             background-color: var(--card-bg);
             max-width: 500px;
+            width: 100%;
             margin: 0 auto;
-            padding: 30px;
+            padding: 30px 20px;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             text-align: right;
@@ -446,6 +456,42 @@
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
+        }
+
+        /* 📱 تحسين التجاوب للهواتف والشاشات الصغيرة */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            .navbar .nav-links {
+                gap: 12px;
+            }
+
+            .navbar .nav-links li a {
+                font-size: 14px;
+            }
+
+            .products-section,
+            .cart-section,
+            .reviews-section {
+                padding: 30px 4%;
+            }
+
+            .offers-banner h2 {
+                font-size: 18px;
+            }
+
+            .offers-banner .offer-btn {
+                font-size: 13px;
+                padding: 8px 18px;
+            }
+
+            .products-section h2,
+            .reviews-section h2 {
+                font-size: 22px;
+            }
         }
     </style>
 </head>
@@ -824,4 +870,3 @@
 </body>
 
 </html>
-test
